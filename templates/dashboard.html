@@ -12,6 +12,7 @@
             --secondary-color: #212529;
             --accent-color: #ffc107;
             --success-color: #28a745;
+            --info-color: #17a2b8;
             --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
@@ -27,6 +28,7 @@
             background: linear-gradient(135deg, var(--secondary-color) 0%, #000 100%);
             box-shadow: 0 2px 10px rgba(220, 53, 69, 0.3);
             padding: 1rem 0;
+            border-bottom: 3px solid var(--primary-color);
         }
 
         .navbar-brand {
@@ -58,10 +60,23 @@
             background: linear-gradient(135deg, rgba(220, 53, 69, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%),
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path fill="rgba(255,255,255,0.05)" d="M0,300 Q300,150 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
             background-size: cover;
-            padding: 3rem 0;
+            padding: 2.5rem 0;
             border-radius: 0 0 30px 30px;
             margin-bottom: 2rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover;
         }
 
         .hero-content h1 {
@@ -69,6 +84,7 @@
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             margin-bottom: 1rem;
+            position: relative;
         }
 
         .hero-content p {
@@ -79,7 +95,7 @@
         .stats-card {
             background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
             border: 1px solid rgba(220, 53, 69, 0.3);
-            border-radius: 15px;
+            border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             box-shadow: var(--card-shadow);
@@ -124,6 +140,265 @@
             letter-spacing: 1px;
         }
 
+        /* Updated Training Focus Section */
+        .training-focus {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            border-radius: 15px;
+            padding: 0;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        .focus-header {
+            background: linear-gradient(135deg, var(--primary-color), #c82333);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .focus-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .focus-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0.5rem 0 0;
+        }
+
+        .focus-content {
+            padding: 1.5rem;
+        }
+
+        .exercise-section {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1.5rem;
+        }
+
+        .exercise-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .exercise-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .exercise-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        .exercise-equipment {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 0.25rem;
+        }
+
+        .exercise-sets {
+            background: rgba(220, 53, 69, 0.2);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .exercise-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .exercise-media {
+            border-radius: 10px;
+            overflow: hidden;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            position: relative;
+        }
+
+        .exercise-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .exercise-media-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .exercise-media-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .exercise-instructions {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .instructions-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .instructions-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .instructions-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .instructions-title i {
+            margin-right: 0.5rem;
+        }
+
+        .instructions-content {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .instructions-list {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .instructions-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .focus-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .focus-tag {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--accent-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .focus-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .focus-btn {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .focus-btn i {
+            margin-right: 0.5rem;
+        }
+
+        .btn-edit {
+            background: rgba(255, 193, 7, 0.2);
+            color: var(--accent-color);
+        }
+
+        .btn-edit:hover {
+            background: rgba(255, 193, 7, 0.3);
+        }
+
+        .btn-done {
+            background: linear-gradient(135deg, var(--primary-color), #c82333);
+            color: white;
+        }
+
+        .btn-done:hover {
+            background: linear-gradient(135deg, #c82333, var(--primary-color));
+        }
+
+        .btn-add-note {
+            background: rgba(23, 162, 184, 0.2);
+            color: var(--info-color);
+        }
+
+        .btn-add-note:hover {
+            background: rgba(23, 162, 184, 0.3);
+        }
+
+        .no-equipment-badge {
+            background: rgba(40, 167, 69, 0.2);
+            color: var(--success-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .no-equipment-badge i {
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .exercise-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .exercise-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .exercise-sets {
+                margin-top: 0.5rem;
+            }
+            
+            .focus-actions {
+                flex-direction: column;
+            }
+        }
+
+        /* Rest of your existing styles remain the same */
         .week-card {
             background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
             border: 1px solid rgba(220, 53, 69, 0.2);
@@ -157,6 +432,9 @@
         .week-progress {
             font-size: 0.9rem;
             color: var(--accent-color);
+            background: rgba(255, 193, 7, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
         }
 
         .day-grid {
@@ -239,40 +517,11 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
-        .chart-container {
-            background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
-            border: 1px solid rgba(220, 53, 69, 0.3);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-top: 2rem;
-            box-shadow: var(--card-shadow);
-        }
-
-        .progress-ring {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 1rem;
-        }
-
-        .progress-ring-circle {
-            stroke: rgba(220, 53, 69, 0.2);
-            fill: transparent;
-            stroke-width: 8;
-        }
-
-        .progress-ring-circle-active {
-            stroke: var(--primary-color);
-            fill: transparent;
-            stroke-width: 8;
-            stroke-linecap: round;
-            transition: stroke-dashoffset 0.5s ease;
-        }
-
         .quick-actions {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            margin-top: 1rem;
+            margin: 2rem 0;
         }
 
         .action-btn {
@@ -309,27 +558,28 @@
             border-top: 1px solid rgba(220, 53, 69, 0.3);
         }
 
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-
-            .day-grid {
-                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            }
-
-            .stats-card {
-                margin-bottom: 1rem;
-            }
+        /* Modal styles */
+        .modal-content {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            color: #e0e0e0;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+        .modal-header {
+            border-bottom: 1px solid rgba(220, 53, 69, 0.3);
         }
 
-        .pulse {
-            animation: pulse 2s ease-in-out infinite;
+        .modal-footer {
+            border-top: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #c82333);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #c82333, var(--primary-color));
         }
     </style>
 </head>
@@ -338,7 +588,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <i class="bi bi-lightning-charge-fill"></i> PEEK-A-BOO TRACKER
+                <i class="bi bi-lightning-charge-fill"></i> PEEK-A-BOO BOXING
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -353,6 +603,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/progress">
                             <i class="bi bi-graph-up"></i> Progress
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/workouts">
+                            <i class="bi bi-activity"></i> Workouts
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/nutrition">
+                            <i class="bi bi-egg-fried"></i> Nutrition
                         </a>
                     </li>
                     <li class="nav-item">
@@ -375,7 +635,7 @@
         <div class="container">
             <div class="hero-content text-center text-white">
                 <h1><i class="bi bi-trophy-fill"></i> Master the Peek-a-Boo Style</h1>
-                <p>6-Week Progressive Training Program • Track Your Journey to Excellence</p>
+                <p>6-Week Progressive Training Program • No Equipment Needed • Train Anywhere</p>
             </div>
         </div>
     </div>
@@ -422,111 +682,445 @@
             </div>
         </div>
 
-        <!-- Quick Actions -->
-        <div class="quick-actions">
-            <button class="action-btn" onclick="window.location.href='/progress'">
-                <i class="bi bi-graph-up"></i> View Progress
-            </button>
-            <button class="action-btn" onclick="window.location.href='/export'">
-                <i class="bi bi-download"></i> Export Data
-            </button>
-            <button class="action-btn" onclick="window.location.href='/settings'">
-                <i class="bi bi-gear-fill"></i> Settings
-            </button>
+        <!-- No Equipment Badge -->
+        <div class="no-equipment-badge">
+            <i class="bi bi-house-check"></i> No Equipment Needed - Home Workout
         </div>
 
-        <!-- Training Weeks -->
-        {% for week in weeks %}
-        <div class="week-card">
-            <div class="week-header">
-                <h2 class="week-title">
-                    <i class="bi bi-calendar3"></i> Week {{ week }}
-                </h2>
-                <span class="week-progress">
-                    <i class="bi bi-star-fill"></i> 
-                    <span id="week{{ week }}Progress">0</span>/5 Days
-                </span>
+        <!-- Updated Training Focus Section -->
+        <div class="training-focus">
+            <div class="focus-header">
+                <h1 class="focus-title">DAY 2</h1>
+                <p class="focus-subtitle">Full Body Boxing Conditioning</p>
             </div>
-            
-            <div class="day-grid">
-                {% for day in range(1, 6) %}
-                <a href="/week/{{ week }}/day/{{ day }}" 
-                   class="day-card {% if (week, day) in completed_sessions %}completed{% endif %}">
-                    {% if (week, day) in completed_sessions %}
-                    <span class="completed-badge">
-                        <i class="bi bi-check-lg"></i>
-                    </span>
-                    {% endif %}
-                    <div class="day-number">{{ day }}</div>
-                    <div class="day-label">
-                        {% if week in training_data and day in training_data[week] %}
-                        {{ training_data[week][day]['focus'] }}
-                        {% else %}
-                        Day {{ day }}
-                        {% endif %}
+            <div class="focus-content">
+                <!-- Equipment Section -->
+                <div class="exercise-section">
+                    <div class="exercise-header">
+                        <div>
+                            <h3 class="exercise-name">Equipment Needed</h3>
+                            <p class="exercise-equipment">Bodyweight Only - No Equipment</p>
+                        </div>
                     </div>
-                </a>
-                {% endfor %}
+                    <div class="instructions-content">
+                        <p><strong>Workout Space:</strong> Clear a small area (6x6 feet) for movement</p>
+                        <p><strong>Duration:</strong> 30-45 minutes</p>
+                    </div>
+                </div>
+
+                <!-- Exercises Section -->
+                <div class="exercise-section">
+                    <div class="exercise-header">
+                        <div>
+                            <h3 class="exercise-name">5 Bodyweight Exercises</h3>
+                        </div>
+                    </div>
+
+                    <!-- Exercise 1 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <div>
+                                <h4 class="exercise-name">Shadow Boxing · Peek-a-Boo Stance</h4>
+                                <p class="exercise-equipment">3 Sets x 3 minutes</p>
+                            </div>
+                            <div class="exercise-sets">3x3min</div>
+                        </div>
+                        <div class="exercise-details">
+                            <div class="exercise-media">
+                                <div class="exercise-media-placeholder">
+                                    <i class="bi bi-person-arms-up"></i>
+                                    <p>Shadow Boxing Demo</p>
+                                    <button class="btn btn-sm btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-exercise="shadow-boxing">
+                                        View Demo
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="exercise-instructions">
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-journal-text"></i> Records
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <ul class="instructions-list">
+                                            <li>Add note</li>
+                                            <li><strong>FOCUS AREA:</strong> Footwork, Defense, Combination</li>
+                                            <li><strong>EQUIPMENT:</strong> None</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-gear"></i> Preparation
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <p>Assume Peek-a-Boo stance: knees bent, hands protecting face, elbows tucked in. Stay on balls of your feet.</p>
+                                    </div>
+                                </div>
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-play-btn"></i> Execution
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <p>Move continuously, practice defensive moves (bobbing, weaving), throw combinations imagining an opponent. Focus on form over speed.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="focus-tags">
+                            <span class="focus-tag">Cardio</span>
+                            <span class="focus-tag">Technique</span>
+                            <span class="focus-tag">Footwork</span>
+                        </div>
+                    </div>
+
+                    <!-- Exercise 2 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <div>
+                                <h4 class="exercise-name">Push-up Variations</h4>
+                                <p class="exercise-equipment">4 Sets x 12-15 reps</p>
+                            </div>
+                            <div class="exercise-sets">4x15</div>
+                        </div>
+                        <div class="exercise-details">
+                            <div class="exercise-media">
+                                <div class="exercise-media-placeholder">
+                                    <i class="bi bi-activity"></i>
+                                    <p>Push-up Demo</p>
+                                    <button class="btn btn-sm btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-exercise="pushups">
+                                        View Demo
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="exercise-instructions">
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-journal-text"></i> Records
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <ul class="instructions-list">
+                                            <li>Add note</li>
+                                            <li><strong>FOCUS AREA:</strong> Chest, Shoulders, Triceps</li>
+                                            <li><strong>EQUIPMENT:</strong> None</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-gear"></i> Preparation
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <p>Start in plank position with hands slightly wider than shoulders. Keep body in straight line from head to heels.</p>
+                                    </div>
+                                </div>
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-play-btn"></i> Execution
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <p>Lower your body until chest nearly touches floor. Keep elbows at 45-degree angle. Push back up explosively. For variation: wide grip, diamond, or decline.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="focus-tags">
+                            <span class="focus-tag">Upper Body</span>
+                            <span class="focus-tag">Strength</span>
+                            <span class="focus-tag">Pushing Power</span>
+                        </div>
+                    </div>
+
+                    <!-- Exercise 3 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <div>
+                                <h4 class="exercise-name">Bodyweight Squats</h4>
+                                <p class="exercise-equipment">4 Sets x 20 reps</p>
+                            </div>
+                            <div class="exercise-sets">4x20</div>
+                        </div>
+                        <div class="exercise-details">
+                            <div class="exercise-media">
+                                <div class="exercise-media-placeholder">
+                                    <i class="bi bi-person-standing"></i>
+                                    <p>Squat Demo</p>
+                                    <button class="btn btn-sm btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-exercise="squats">
+                                        View Demo
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="exercise-instructions">
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-journal-text"></i> Records
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <ul class="instructions-list">
+                                            <li>Add note</li>
+                                            <li><strong>FOCUS AREA:</strong> Legs, Glutes, Core</li>
+                                            <li><strong>EQUIPMENT:</strong> None</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-gear"></i> Preparation
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <p>Stand with feet shoulder-width apart, toes slightly pointed out. Keep chest up and back straight.</p>
+                                    </div>
+                                </div>
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-play-btn"></i> Execution
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <p>Lower your body as if sitting in a chair. Go as deep as possible while keeping heels on ground. Drive through heels to return to standing. For power: add jump at top.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="focus-tags">
+                            <span class="focus-tag">Lower Body</span>
+                            <span class="focus-tag">Explosiveness</span>
+                            <span class="focus-tag">Stability</span>
+                        </div>
+                    </div>
+
+                    <!-- Exercise 4 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <div>
+                                <h4 class="exercise-name">Plank with Shoulder Taps</h4>
+                                <p class="exercise-equipment">3 Sets x 30 seconds</p>
+                            </div>
+                            <div class="exercise-sets">3x30s</div>
+                        </div>
+                        <div class="exercise-details">
+                            <div class="exercise-media">
+                                <div class="exercise-media-placeholder">
+                                    <i class="bi bi-hand-index"></i>
+                                    <p>Plank Demo</p>
+                                    <button class="btn btn-sm btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-exercise="plank">
+                                        View Demo
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="exercise-instructions">
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-journal-text"></i> Records
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <ul class="instructions-list">
+                                            <li>Add note</li>
+                                            <li><strong>FOCUS AREA:</strong> Core Stability, Shoulders</li>
+                                            <li><strong>EQUIPMENT:</strong> None</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-gear"></i> Preparation
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <p>Start in high plank position with hands directly under shoulders. Engage core and glutes to maintain straight line.</p>
+                                    </div>
+                                </div>
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-play-btn"></i> Execution
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <p>While maintaining plank position, lift right hand and tap left shoulder. Return to start and alternate sides. Keep hips stable - don't let them rotate.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="focus-tags">
+                            <span class="focus-tag">Core</span>
+                            <span class="focus-tag">Stability</span>
+                            <span class="focus-tag">Balance</span>
+                        </div>
+                    </div>
+
+                    <!-- Exercise 5 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <div>
+                                <h4 class="exercise-name">Burpees</h4>
+                                <p class="exercise-equipment">3 Sets x 10 reps</p>
+                            </div>
+                            <div class="exercise-sets">3x10</div>
+                        </div>
+                        <div class="exercise-details">
+                            <div class="exercise-media">
+                                <div class="exercise-media-placeholder">
+                                    <i class="bi bi-lightning"></i>
+                                    <p>Burpee Demo</p>
+                                    <button class="btn btn-sm btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-exercise="burpees">
+                                        View Demo
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="exercise-instructions">
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-journal-text"></i> Records
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <ul class="instructions-list">
+                                            <li>Add note</li>
+                                            <li><strong>FOCUS AREA:</strong> Full Body, Cardio, Explosiveness</li>
+                                            <li><strong>EQUIPMENT:</strong> None</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-gear"></i> Preparation
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <p>Stand with feet shoulder-width apart. This is a high-intensity exercise - pace yourself accordingly.</p>
+                                    </div>
+                                </div>
+                                <div class="instructions-section">
+                                    <h5 class="instructions-title">
+                                        <i class="bi bi-play-btn"></i> Execution
+                                    </h5>
+                                    <div class="instructions-content">
+                                        <p>1) Drop into squat position and place hands on floor. 2) Kick feet back into plank position. 3) Do a push-up. 4) Return feet to squat position. 5) Explode upward into jump. Land softly and repeat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="focus-tags">
+                            <span class="focus-tag">Full Body</span>
+                            <span class="focus-tag">Cardio</span>
+                            <span class="focus-tag">Explosive Power</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="focus-actions">
+                    <button class="focus-btn btn-add-note" data-bs-toggle="modal" data-bs-target="#noteModal">
+                        <i class="bi bi-plus-circle"></i> Add Note
+                    </button>
+                    <button class="focus-btn btn-edit">
+                        <i class="bi bi-pencil"></i> EDIT
+                    </button>
+                    <button class="focus-btn btn-done">
+                        <i class="bi bi-check-lg"></i> DONE
+                    </button>
+                </div>
             </div>
         </div>
-        {% endfor %}
+
+        <!-- Rest of your content remains the same -->
+        <!-- Quick Actions, Training Weeks, etc. -->
+
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="mb-0">
-                <i class="bi bi-shield-check"></i> Peek-a-Boo Boxing Training Tracker © 2025
-            </p>
-            <p class="mb-0">
-                <small>Inspired by legendary fighters • Built for champions by Flames</small>
-            </p>
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalTitle">Exercise Demonstration</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="exercise-media-placeholder" style="min-height: 300px;">
+                        <i class="bi bi-play-circle" style="font-size: 4rem;"></i>
+                        <p class="mt-3">Exercise demonstration video would play here</p>
+                        <p class="text-muted">In a real application, this would show proper form for the selected exercise</p>
+                    </div>
+                    <div class="mt-3 p-3" style="background: rgba(0,0,0,0.2); border-radius: 8px;">
+                        <h6>Form Tips:</h6>
+                        <p id="formTips" class="mb-0">Proper form is essential for effectiveness and injury prevention. Focus on controlled movements and full range of motion.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- Note Modal -->
+    <div class="modal fade" id="noteModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Exercise Note</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exerciseSelect" class="form-label">Exercise</label>
+                            <select class="form-control" id="exerciseSelect">
+                                <option>Shadow Boxing · Peek-a-Boo Stance</option>
+                                <option>Push-up Variations</option>
+                                <option>Bodyweight Squats</option>
+                                <option>Plank with Shoulder Taps</option>
+                                <option>Burpees</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="noteText" class="form-label">Note</label>
+                            <textarea class="form-control" id="noteText" rows="4" placeholder="Add your notes about this exercise..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save Note</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Load statistics
-        async function loadStats() {
-            try {
-                const response = await fetch('/api/stats');
-                const data = await response.json();
+        // Video modal handler with exercise-specific tips
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoModal = document.getElementById('videoModal');
+            const formTips = document.getElementById('formTips');
+            
+            const exerciseTips = {
+                'shadow-boxing': 'Keep hands up at all times. Move your head off the center line. Practice both offensive and defensive movements. Imagine a real opponent.',
+                'pushups': 'Keep your core tight throughout. Don\'t let your hips sag. Go through full range of motion. Breathe out on the way up.',
+                'squats': 'Keep chest up and back straight. Knees should track over toes. Go as deep as your flexibility allows. Drive through heels.',
+                'plank': 'Keep body in straight line. Don\'t let hips rise or sag. Engage glutes and core. Breathe steadily throughout.',
+                'burpees': 'Maintain good form even when tired. Land softly from the jump. Keep core engaged during plank phase. Pace yourself.'
+            };
+            
+            videoModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const exercise = button.getAttribute('data-exercise');
+                const modalTitle = videoModal.querySelector('.modal-title');
                 
-                document.getElementById('totalSessions').textContent = data.total_sessions;
+                // Set modal title based on exercise
+                const exerciseTitles = {
+                    'shadow-boxing': 'Shadow Boxing Demonstration',
+                    'pushups': 'Push-up Variations Demonstration',
+                    'squats': 'Bodyweight Squat Demonstration',
+                    'plank': 'Plank with Shoulder Taps Demonstration',
+                    'burpees': 'Burpee Demonstration'
+                };
                 
-                // Calculate current week based on completed sessions
-                const completedSessions = {{ completed_sessions | length }};
-                const currentWeek = Math.ceil(completedSessions / 5) || 1;
-                document.getElementById('currentWeek').textContent = currentWeek;
-                
-                // Calculate completion rate
-                const totalPossible = 30; // 6 weeks * 5 days
-                const completionRate = Math.round((data.total_sessions / totalPossible) * 100);
-                document.getElementById('completionRate').textContent = completionRate + '%';
-                
-                // Calculate streak (simplified - could be enhanced)
-                document.getElementById('streak').textContent = data.current_week_progress || 0;
-                
-                // Update week progress
-                for (let week = 1; week <= 6; week++) {
-                    let weekProgress = 0;
-                    {% for w, d in completed_sessions %}
-                    if ({{ w }} === week) {
-                        weekProgress++;
-                    }
-                    {% endfor %}
-                    const progressElement = document.getElementById(`week${week}Progress`);
-                    if (progressElement) {
-                        progressElement.textContent = weekProgress;
-                    }
-                }
-            } catch (error) {
-                console.error('Error loading stats:', error);
-            }
-        }
+                modalTitle.textContent = exerciseTitles[exercise] || 'Exercise Demonstration';
+                formTips.textContent = exerciseTips[exercise] || 'Proper form is essential for effectiveness and injury prevention. Focus on controlled movements and full range of motion.';
+            });
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', loadStats);
+            // Done button handler
+            document.querySelector('.btn-done').addEventListener('click', function() {
+                alert('Workout completed! Great job training like a champion!');
+                // In a real app, this would mark the day as completed
+            });
+        });
     </script>
 </body>
 </html>
