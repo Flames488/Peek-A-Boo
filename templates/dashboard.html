@@ -584,51 +584,41 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <i class="bi bi-lightning-charge-fill"></i> PEEK-A-BOO BOXING
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/">
-                            <i class="bi bi-house-fill"></i> Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/progress">
-                            <i class="bi bi-graph-up"></i> Progress
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/workouts">
-                            <i class="bi bi-activity"></i> Workouts
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/nutrition">
-                            <i class="bi bi-egg-fried"></i> Nutrition
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/export">
-                            <i class="bi bi-download"></i> Export
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/settings">
-                            <i class="bi bi-gear-fill"></i> Settings
-                        </a>
-                    </li>
-                </ul>
-            </div>
+   <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+            <i class="bi bi-lightning-charge-fill"></i> PEEK-A-BOO BOXING
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('index') }}">
+                        <i class="bi bi-house-fill"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('progress') }}">
+                        <i class="bi bi-graph-up"></i> Progress
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('export_data') }}">
+                        <i class="bi bi-download"></i> Export
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('settings') }}">
+                        <i class="bi bi-gear-fill"></i> Settings
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <div class="hero-section">
@@ -1014,6 +1004,16 @@
                         <i class="bi bi-check-lg"></i> DONE
                     </button>
                 </div>
+
+                <!-- ✅ Export CSV Button -->
+<div class="text-center mt-4">
+    <a href="{{ url_for('export') }}" class="btn btn-success btn-lg">
+        <i class="bi bi-download"></i> Export Progress CSV
+    </a>
+</div>
+
+
+
             </div>
         </div>
 
